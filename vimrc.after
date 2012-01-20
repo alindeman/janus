@@ -1,0 +1,71 @@
+" More sane searching
+nnoremap / /\v
+vnoremap / /\v
+set ignorecase
+set smartcase
+set incsearch
+set showmatch
+set hlsearch
+
+" <leader><space> clears search
+nnoremap <leader><space> :noh<cr>
+
+" <leader><leader> toggles between files
+nnoremap <leader><leader> <c-^>
+
+" <tab> matches bracket pairs
+nnoremap <tab> %
+vnoremap <tab> %
+
+" show colored column at 80
+set colorcolumn=80
+
+" Disable arrow keys
+"nnoremap <up> <nop>
+"nnoremap <down> <nop>
+"nnoremap <left> <nop>
+"nnoremap <right> <nop>
+"inoremap <up> <nop>
+"inoremap <down> <nop>
+"inoremap <left> <nop>
+"inoremap <right> <nop>
+
+" j and k move by screen lines
+nnoremap j gj
+nnoremap k gk
+
+" I never really want to hit F1
+inoremap <F1> <ESC>
+nnoremap <F1> <ESC>
+vnoremap <F1> <ESC>
+
+" shortcut for :Ack
+nnoremap <leader>a :Ack
+
+" <leader>v selects text that was just pasted
+nnoremap <leader>v V`]
+
+" <leader>w opens a vertical split window and switches to it
+nnoremap <leader>w <C-w>v<C-w>l
+
+" moving among splits
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" autosave
+au FocusLost * :wa
+
+colorscheme solarized
+set transparency=6
+
+" no menubar
+set guioptions=-m
+
+let os = substitute(system('uname'), "\n", "", "")
+if os == "Linux"
+  set guifont=Inconsolata\ 14
+else
+  set guifont=Inconsolata:h14
+endif

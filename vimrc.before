@@ -1,0 +1,7 @@
+" Thanks http://stevelosh.com/blog/2010/09/coming-home-to-vim/
+
+set ttyfast
+set wildmenu
+
+" Remap leader to comma
+let mapleader = ","
